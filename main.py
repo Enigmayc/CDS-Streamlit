@@ -4,7 +4,7 @@ import numpy as np
 import torch
 
 # Load the model on CPU
-model = torch.load('/Users/yucongma/Desktop/CDS-Streamlit/CNN_LSTM.pt', map_location=torch.device('cpu'))
+model = torch.load('CNN_LSTM.pt', map_location=torch.device('cpu'))
 
 
 def main():
@@ -16,7 +16,7 @@ def main():
         if st.image("1.png", caption="Image 1"):
             if st.button("Image 1"):
                 # Load the image data
-                image_data = np.load("/Users/yucongma/Desktop/CDS-Streamlit/2018_13_147.npy")
+                image_data = np.load("2018_13_147.npy")
                 
                 # Preprocess the image data (if needed)
                 # Perform any necessary preprocessing steps on the image data here
@@ -35,7 +35,7 @@ def main():
         if st.image("2.jpeg", caption="Image 2"):
             if st.button("Image 2"):
                 # Load the image data
-                image_data = np.load("/Users/yucongma/Desktop/CDS-Streamlit/2018_13_131.npy")
+                image_data = np.load("2018_13_131.npy")
                 
                 # Preprocess the image data (if needed)
                 # Perform any necessary preprocessing steps on the image data here
@@ -55,7 +55,7 @@ def main():
         if st.image("3.jpeg", caption="Image 3"):
             if st.button("Image 3"):    
                 # Load the image data
-                image_data = np.load("/Users/yucongma/Desktop/CDS-Streamlit/2018_13_115.npy")
+                image_data = np.load("2018_13_115.npy")
                 
                 # Preprocess the image data (if needed)
                 # Perform any necessary preprocessing steps on the image data here
