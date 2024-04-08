@@ -1,10 +1,9 @@
 import streamlit as st
 import time
-import torch
 import numpy as np
 
 st.set_page_config(page_title="Plotting Demo", page_icon="📈")
-model = torch.load("CNN_LSTM.pt", map_location=torch.device('cpu'))
+
 
 st.markdown("# Plotting Demo")
 st.sidebar.header("Plotting Demo")
