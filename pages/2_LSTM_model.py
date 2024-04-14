@@ -3,7 +3,7 @@ import time
 import numpy as np
 import pandas as pd
 import numpy as np
-import ta
+#import ta
 from pages.LSTM import LSTMClass
 
 st.set_page_config(page_title="LSTM", page_icon="📈")
