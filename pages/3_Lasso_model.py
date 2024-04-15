@@ -1,14 +1,15 @@
 import streamlit as st
-import pickle
+import joblib
 import numpy as np
 import torch
 import matplotlib.pyplot as plt
 from imageio import imread
 
 # Load the model on CPU
-model = torch.load('CNN_LSTM.pt', map_location=torch.device('cpu'))
+#model = torch.load('CNN_LSTM.pt', map_location=torch.device('cpu'))
+lasso_model = joblib.load('lasso_best_model.pkl')
 def main():
-    st.title("Corn Price Prediction")
+    st.title("Corn Yield Prediction")
     st.write("Select a satellite image to predict the corn yield.")
     # Display the satellite images as interactive elements
     col1, col2, col3, col4= st.columns(4)
@@ -22,12 +23,15 @@ def main():
                 # Perform any necessary preprocessing steps on the image data here
                 
                 # Convert the image data to a PyTorch tensor and add a batch dimension
-                image_tensor = torch.tensor(image_data, dtype=torch.float32).unsqueeze(0)
+                #image_tensor = torch.tensor(image_data, dtype=torch.float32).unsqueeze(0)
                 
                 # Perform prediction using the loaded model
-                with torch.no_grad():
-                    prediction = model(image_tensor)
+                # with torch.no_grad():
+                #     prediction = model(image_tensor)
+                flattened_image = image_data.reshape(1, -1)
                 
+                # Perform prediction using the Lasso model
+                prediction = lasso_model.predict(flattened_image)
                 # Display the prediction
                 st.write("Yield prediction:", prediction.item())
 
@@ -41,12 +45,15 @@ def main():
                 # Perform any necessary preprocessing steps on the image data here
                 
                 # Convert the image data to a PyTorch tensor and add a batch dimension
-                image_tensor = torch.tensor(image_data, dtype=torch.float32).unsqueeze(0)
+                #image_tensor = torch.tensor(image_data, dtype=torch.float32).unsqueeze(0)
                 
                 # Perform prediction using the loaded model
-                with torch.no_grad():
-                    prediction = model(image_tensor)
+                # with torch.no_grad():
+                #     prediction = model(image_tensor)
+                flattened_image = image_data.reshape(1, -1)
                 
+                # Perform prediction using the Lasso model
+                prediction = lasso_model.predict(flattened_image)
                 # Display the prediction
                 st.write("Yield prediction:", prediction.item())
 
@@ -61,12 +68,15 @@ def main():
                 # Perform any necessary preprocessing steps on the image data here
                 
                 # Convert the image data to a PyTorch tensor and add a batch dimension
-                image_tensor = torch.tensor(image_data, dtype=torch.float32).unsqueeze(0)
+                #image_tensor = torch.tensor(image_data, dtype=torch.float32).unsqueeze(0)
             
                 # Perform prediction using the loaded model
-                with torch.no_grad():
-                    prediction = model(image_tensor)
+                # with torch.no_grad():
+                #     prediction = model(image_tensor)
+                flattened_image = image_data.reshape(1, -1)
                 
+                # Perform prediction using the Lasso model
+                prediction = lasso_model.predict(flattened_image)
                 # Display the prediction
                 st.write("Yield prediction:", prediction.item())
     with col4:
@@ -79,12 +89,15 @@ def main():
                 # Perform any necessary preprocessing steps on the image data here
                 
                 # Convert the image data to a PyTorch tensor and add a batch dimension
-                image_tensor = torch.tensor(image_data, dtype=torch.float32).unsqueeze(0)
+                #image_tensor = torch.tensor(image_data, dtype=torch.float32).unsqueeze(0)
             
                 # Perform prediction using the loaded model
-                with torch.no_grad():
-                    prediction = model(image_tensor)
+                # with torch.no_grad():
+                #     prediction = model(image_tensor)
+                flattened_image = image_data.reshape(1, -1)
                 
+                # Perform prediction using the Lasso model
+                prediction = lasso_model.predict(flattened_image)
                 # Display the prediction
                 st.write("Yield prediction:", prediction.item())
 
