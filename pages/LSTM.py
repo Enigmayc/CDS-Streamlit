@@ -37,7 +37,7 @@ class LSTMClass():
 
             early_stopping = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
 
-            model.fit(X_train, y_train, epochs=100, batch_size=8, validation_data=(X_test, y_test), verbose=1, callbacks=[early_stopping])
+            model.fit(X_train, y_train, epochs=10, batch_size=8, validation_data=(X_test, y_test), verbose=1, callbacks=[early_stopping])
 
             scores = model.evaluate(X_test, y_test, verbose=0)
 

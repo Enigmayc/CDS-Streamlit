@@ -19,7 +19,7 @@ st.line_chart(df['ZC=F_Open'])
 st.subheader('Corn yield by county')
 df2 = pd.read_csv("assets/corn_grain.csv",
                   usecols=['YEAR', 'LOCATION', 'STATE_FIPS', 'COUNTY_FIPS',	'YIELD','AREA',	'TOTAL_YIELD'])
-st.dataframe(df2)
+
 #user selection
 year = df2['YEAR'].unique().tolist()
 #predefine ranges

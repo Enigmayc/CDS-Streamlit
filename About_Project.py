@@ -19,10 +19,10 @@ st.markdown(
     **👈 Select a model from our sidebar!**
 
     ### Want to see our report?
-    - Check our report [here](https://streamlit.io)
+    - Check our report [here](https://www.overleaf.com/5696927285dcqwcfwcgbcs#a46bd3)
 
     ### Codebase
-    - Check our codebase [here](https://github.com/streamlit/demo-self-driving)
+    - Check our codebase [here](https://github.com/Enigmayc/CDS-Streamlit/tree/LSTM_page)
 
     
 """
